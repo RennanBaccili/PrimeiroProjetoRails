@@ -1,10 +1,26 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  #to fazendo requisição get
+  #que vai me redirecionar home
+  # pagina principal index
+  # quando alguem fizer o get, busca no controller e guia pro action
+  
+  #get '/', controller:'home',action:'index' padrão
 
-  # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
-  # Can be used by load balancers and uptime monitors to verify that the app is live.
-  get "up" => "rails/health#show", as: :rails_health_check
+  #rails routes -g home ->   #pegue todas as rotas, mas separe todas que tiver home dentro
+  root 'home#index'
 
-  # Defines the root path route ("/")
-  # root "posts#index"
+  resources :vehicles, only:[:index, :new, :create, :show, :edit, :update ,:destroy] #Resource
+
+  # cria rotas definidas no only resources :vehicles, only:[:index, :new, :create ,:show ,:edit ,:update ,:destroy]
+
+  # get '/vehicles', controller:'vehicles',action:'index'
+  # get '/vehicles/:id', controller:'vehicles',action:'show' # mostrar um em especifico
+  
+  # get '/vehicles/new', controller:'vehicles',action:'new' #form
+  # post '/vehicles', controller:'vehicles',action:'create'# created
+  
+  # get '/vehicles/:id/edit', controller:'vehicles',action:'edit'
+  # put '/vehicles/:id', controller:'vehicles',action:'update'
+  # patch '/vehicles/:id', controller:'vehicles',action:'update'
+  # delete '/vehicles/:id', controller:'vehicles',action:'destroy'
 end

@@ -1,0 +1,15 @@
+    <p>
+    <% if action_name == 'index' %>
+        <%= link_to vehicle_path(vehicle) do %>
+            <%= 'veja mais sobre ' %>
+        <% end %>
+    <% end %>
+        <%= vehicle.brand %> |
+        <%= vehicle.model %> |
+        <%= vehicle.year %> |
+        <%= vehicle.plate %> |
+        <%= vehicle.kind %> |
+        <%= link_to 'edit',edit_vehicle_path(vehicle)%>
+        <%= link_to 'Delete',vehicle_path(vehicle), data: {'turbo-method': :delete, 'turbo-confirm': 'Tem certeza que dejeja deletar' }%>
+        <p>
+    </p>

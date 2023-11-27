@@ -1,0 +1,36 @@
+<%= form_with model: vehicle, data: {turbo:false} do |form| %>
+  <div>
+    <%= form.label :brand %>
+    <%= form.text_field :brand %>
+  </div>
+
+  <div>
+    <%= form.label :model %>
+    <%= form.text_field :model %>
+  </div>
+
+  <div>
+    <%= form.label :year %>
+    <%= form.number_field :year %>
+  </div>
+
+  <div>
+    <%= form.label :plate %>
+    <%= form.text_field :plate %>
+  </div>
+
+  <div>
+    <%= form.label :kind %>
+    <%= form.number_field :kind %>
+  </div>
+
+  <div>
+    <%= form.submit%>
+  </div>
+
+  <% if action_name == 'edit' %>
+    Estou no edit
+  <% elsif action_name == 'new' %>
+    Estou no new
+    <% end %>
+<% end %>

@@ -1,0 +1,8 @@
+<h2>Vehicle<h2>
+<p>
+    <%= link_to 'New Vehicle', new_vehicle_path %>
+</p>
+
+<% @arrayDeInstanciasVehicles.each do |vehicle| %>
+    <%= render 'vehicle', vehicle: vehicle%>
+<% end %> 
